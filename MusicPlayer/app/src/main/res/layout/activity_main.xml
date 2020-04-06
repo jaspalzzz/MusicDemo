@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="isPlaying"
+            type="Boolean" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_weight="1"
+            android:id="@+id/audioList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"></androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+            android:padding="16dp"
+            app:behavior_hideable="false"
+            app:behavior_peekHeight="90dp"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="1"
+                android:text="SongTitle"
+                android:id="@+id/songTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <ImageView
+                android:layout_marginLeft="16dp"
+                android:src="@{isPlaying?@drawable/ic_pause_circle_outline_black_24dp:@drawable/ic_play_circle_outline_black_24dp}"
+                android:id="@+id/plyaPauseBt"
+                android:layout_width="40dp"
+                android:layout_height="40dp"></ImageView>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>
